@@ -61,7 +61,7 @@ docker-push:
 
 .PHONY: docker-push-all
 docker-push-all: docker-push
-	docker push $(REGISTRY)/oauth2-proxy:latest-amd64
+	docker push $(REGISTRY)/tiedemannoauth2-proxy:latest-amd64
 	docker push $(REGISTRY)/oauth2-proxy:${VERSION}
 	docker push $(REGISTRY)/oauth2-proxy:${VERSION}-amd64
 	docker push $(REGISTRY)/oauth2-proxy:latest-arm64

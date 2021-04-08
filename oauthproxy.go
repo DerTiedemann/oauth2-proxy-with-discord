@@ -758,7 +758,8 @@ func (p *OAuthProxy) OAuthStart(rw http.ResponseWriter, req *http.Request) {
 		return
 	}
 	redirectURI := p.getOAuthRedirectURI(req)
-	http.Redirect(rw, req, p.provider.GetLoginURL(redirectURI, fmt.Sprintf("%v:%v", nonce, redirect)), http.StatusFound)
+	state := fmt.Sprintf("%v:%v", nonce, redirect)
+	http.Redirect(rw, req, p.provider.GetLoginURL(redirectURI, state), http.StatusFound)
 }
 
 // OAuthCallback is the OAuth2 authentication flow callback that finishes the

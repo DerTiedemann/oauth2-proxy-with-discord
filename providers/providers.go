@@ -47,6 +47,8 @@ func New(provider string, p *ProviderData) Provider {
 		return NewDigitalOceanProvider(p)
 	case "google":
 		return NewGoogleProvider(p)
+	case "discord":
+		return NewDiscordProvider(p)
 	default:
 		return nil
 	}
